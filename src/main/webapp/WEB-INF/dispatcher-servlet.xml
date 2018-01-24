@@ -8,4 +8,11 @@
     <context:component-scan base-package="Controllers">
     </context:component-scan>
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <bean id="calculateIntercaptor" class="Interceptors.CalculateInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
 </beans>
