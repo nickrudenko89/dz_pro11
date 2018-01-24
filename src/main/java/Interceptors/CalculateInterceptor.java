@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CalculateInterceptor implements HandlerInterceptor {
 
-    private String secondOperator;
+    private String secondOperator = "";
 
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         String expresion = httpServletRequest.getParameter("expression");

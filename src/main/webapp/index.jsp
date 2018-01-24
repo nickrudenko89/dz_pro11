@@ -51,6 +51,7 @@
                 if ((getCookie("calculator.newExpression")==undefined) || (document.getElementById('resultInput').value==0 && lastSymbol!=".")) {
                     document.getElementById('resultInput').value = value;
                     document.cookie = "calculator.newExpression=true";
+                    document.cookie = "calculator.dotExists=; path=/; expires=" + date.toUTCString();
                 }
                 else
                     document.getElementById('resultInput').value += value;
