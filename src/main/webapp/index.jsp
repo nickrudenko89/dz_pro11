@@ -48,7 +48,7 @@
                     document.getElementById('resultInput').value = 0;
             }
             else if((id>=4 && id<=6)||(id>=8 && id<=10)||(id>=12 && id<=14)||id==17) {              // 0,1,2,3,4,5,6,7,8,9
-                if ((getCookie("calculator.newExpression")==undefined) || (document.getElementById('resultInput').value==0 && lastSymbol!=".")) {
+                if ((getCookie("calculator.newExpression")==undefined) || (inputValue==0 && lastSymbol!=".")) {
                     document.getElementById('resultInput').value = value;
                     document.cookie = "calculator.newExpression=true";
                     document.cookie = "calculator.dotExists=; path=/; expires=" + date.toUTCString();
@@ -75,6 +75,11 @@
                         document.getElementById('resultInput').value += value;
                         sendForm('/calculate');
                     }
+                }
+            }
+            else if(id==16) {
+                if(getCookie("calculator.operatorExists")==undefined && inputValue!=0) {            //±
+                    document.getElementById('resultInput').value = "-" + inputValue;
                 }
             }
             else if(id==18) {                                                                       // .

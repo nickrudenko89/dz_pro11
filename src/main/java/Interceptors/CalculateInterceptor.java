@@ -15,6 +15,8 @@ public class CalculateInterceptor implements HandlerInterceptor {
         String lastSymbol = expresion.substring(expresion.length() - 1);
         if ("+".equals(lastSymbol) || "-".equals(lastSymbol) || "*".equals(lastSymbol) || "/".equals(lastSymbol))
             this.secondOperator = lastSymbol;
+        httpServletRequest.setAttribute("expression",expresion.substring(0,expresion.length()-1));
+        //httpServletRequest.getServletContext().getRequestDispatcher("dispatcher").forward();
         return true;
     }
 

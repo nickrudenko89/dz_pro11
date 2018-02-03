@@ -19,6 +19,19 @@ public class CalculateController {
     }
 
     private double calculateExpression(double firstNumber, double secondNumber, String operator) {
+        switch (operator) {
+            case "+":
+                return firstNumber + secondNumber;
+            case "-":
+                return firstNumber - secondNumber;
+            case "*":
+                return firstNumber * secondNumber;
+            case "/":
+                return firstNumber / secondNumber;
+            default:
+                return 0.0;
+        }
+        /*
         if ("+".equals(operator)) {
             return firstNumber + secondNumber;
         } else if ("-".equals(operator)) {
@@ -31,6 +44,7 @@ public class CalculateController {
             } else {
                 return 0.0;
             }
-        } else return 0.0;
+        } else return 0.0;*/
     }
+
 }
